@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloomMarket Gaming Shop</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#05060b;color:white}
+header{position:sticky;top:0;background:#080912;border-bottom:1px solid #8d21ff;padding:14px;z-index:10}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:900;color:#d64cff}
+.nav a{color:white;text-decoration:none;font-weight:800;margin:0 8px}
+.cartlink{background:#1b082e;border:1px solid #a020ff;border-radius:10px;padding:10px 14px;color:#e5a8ff}
+.hero{max-width:1100px;margin:auto;padding:50px 18px;text-align:center;background:radial-gradient(circle,#6020aa55,transparent 65%)}
+.hero h1{font-size:clamp(44px,9vw,82px);font-style:italic;text-shadow:0 0 25px #8d21ff}
+.hero p{font-size:19px;color:#ddd;margin-top:12px}
+.cta{display:inline-block;margin-top:18px;background:#8d21ff;color:white;text-decoration:none;padding:14px 22px;border-radius:10px;font-weight:900}
+.grid{max-width:1100px;margin:auto;padding:25px 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,#10131d,#080910);border:1px solid #7d22ff;border-radius:16px;padding:18px;text-align:center}
+.img{height:120px;display:grid;place-items:center;font-size:64px;background:#070810;border-radius:12px;margin-bottom:12px}
+.card h3{font-size:22px}
+.price{color:#d64cff;font-size:28px;font-weight:900;margin:12px 0}
+button,.paypal-small,.pay{display:block;width:100%;padding:13px;border-radius:10px;border:1px solid #a020ff;background:#1b082e;color:#e5a8ff;font-weight:900;text-decoration:none;margin-top:10px;cursor:pointer}
+button:hover,.paypal-small:hover{background:#7d22ff;color:white}
+.pay{background:#0070ba;color:white;border-color:#0070ba;font-size:18px}
+.checkout,.order,.notice{max-width:900px;margin:25px auto;padding:22px;background:#0b0d16;border:1px solid #7d22ff;border-radius:18px}
+.cart-line{display:flex;justify-content:space-between;border-bottom:1px solid #ffffff22;padding:8px 0}
+.total{font-size:30px;color:#d64cff;font-weight:900;margin:15px 0}
+.notice{border-color:#ffcc00;background:#2b2200;color:#fff3c4;font-weight:800;line-height:1.45}
+input,select,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #7d22ff;background:#070810;color:white;font-size:16px;margin-top:10px}
+textarea{min-height:80px}
+footer{text-align:center;color:#aaa;padding:28px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">🦝 BloomMarket</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cartlink" href="#cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <h1>BLOOMMARKET</h1>
+  <p>Gaming Shop · Fast Delivery · Secure PayPal Payment</p>
+  <a class="cta" href="#shop">Shop Now</a>
+</section>
+
+<section id="shop" class="grid">
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Rainbow Seed</h3>
+  <div class="price">0,10 €</div>
+  <button onclick="addToCart('Rainbow Seed', 0.10)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.10">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Gold Seed</h3>
+  <div class="price">0,05 €</div>
+  <button onclick="addToCart('Gold Seed', 0.05)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.05">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Unicorn</h3>
+  <div class="price">0,75 €</div>
+  <button onclick="addToCart('Unicorn', 0.75)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.75">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Dragon Fly</h3>
+  <div class="price">0,50 €</div>
+  <button onclick="addToCart('Dragon Fly', 0.50)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.50">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Dragon Breath</h3>
+  <div class="price">1,00 €</div>
+  <button onclick="addToCart('Dragon Breath', 1.00)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/1.00">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Moon Bloom</h3>
+  <div class="price">0,75 €</div>
+  <button onclick="addToCart('Moon Bloom', 0.75)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.75">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Hypno Bloom</h3>
+  <div class="price">1,25 €</div>
+  <button onclick="addToCart('Hypno Bloom', 1.25)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/1.25">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Super Sprinkler</h3>
+  <div class="price">0,30 €</div>
+  <button onclick="addToCart('Super Sprinkler', 0.30)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.30">Buy with PayPal</a>
+</div>
+<div class="card">
+  <div class="img">🎮</div>
+  <h3>Super Water Can</h3>
+  <div class="price">0,10 €</div>
+  <button onclick="addToCart('Super Water Can', 0.10)">Add to Cart</button>
+  <a class="paypal-small" href="https://www.paypal.me/Tino677/0.10">Buy with PayPal</a>
+</div>
+</section>
+
+<section id="cart" class="checkout">
+  <h2>🛒 Your Cart</h2>
+  <div id="cartList">Your cart is empty.</div>
+  <div class="total">Total: <span id="cartTotal">0,00 €</span></div>
+
+  <div class="notice">
+    ⚠️ PAYMENT NOTICE<br><br>
+    Please send your PayPal payment using <strong>Friends & Family</strong> only.<br><br>
+    Payments sent as <strong>Goods & Services</strong> will be refunded or declined.
+  </div>
+
+  <button class="pay" onclick="checkout()">Pay with PayPal</button>
+  <button onclick="clearCart()">Clear Cart</button>
+</section>
+
+<section id="order" class="order">
+  <h2>📩 Place Your Order</h2>
+  <p>Fill this out after payment. Your order will be sent by email automatically.</p>
+  <form action="https://formsubmit.co/gtin3908@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New BloomMarket Order">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="Roblox Username" placeholder="Your Roblox username" required>
+    <select name="Item" required>
+      <option value="">Select item</option>
+      <option>Rainbow Seed - 0,10 €</option><option>Gold Seed - 0,05 €</option><option>Unicorn - 0,75 €</option><option>Dragon Fly - 0,50 €</option><option>Dragon Breath - 1,00 €</option><option>Moon Bloom - 0,75 €</option><option>Hypno Bloom - 1,25 €</option><option>Super Sprinkler - 0,30 €</option><option>Super Water Can - 0,10 €</option>
+    </select>
+    <textarea name="Message" placeholder="Optional message"></textarea>
+    <button type="submit">Send Order by Email</button>
+  </form>
+</section>
+
+<section id="contact" class="order">
+  <h2>Contact</h2>
+  <p>Questions? Contact me on Discord: <strong>nature_tino</strong></p>
+  <p>PayPal: <strong>paypal.me/Tino677</strong></p>
+</section>
+
+<footer>© 2026 BloomMarket Gaming Shop</footer>
+
+<script>
+const PAYPAL = "https://www.paypal.me/Tino677/";
+let cart = [];
+
+function money(v){
+  return v.toFixed(2).replace(".", ",") + " €";
+}
+
+function addToCart(name, price){
+  cart.push({name, price});
+  renderCart();
+  document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+}
+
+function renderCart(){
+  document.getElementById("cartCount").innerText = cart.length;
+  const total = cart.reduce((s,i)=>s+i.price,0);
+  document.getElementById("cartTotal").innerText = money(total);
+  const list = document.getElementById("cartList");
+  if(cart.length === 0){
+    list.innerText = "Your cart is empty.";
+    return;
+  }
+  list.innerHTML = cart.map(i => '<div class="cart-line"><span>'+i.name+'</span><strong>'+money(i.price)+'</strong></div>').join("");
+}
+
+function clearCart(){
+  cart = [];
+  renderCart();
+}
+
+function checkout(){
+  const total = cart.reduce((s,i)=>s+i.price,0);
+  if(total <= 0){
+    alert("Your cart is empty.");
+    return;
+  }
+  window.location.href = PAYPAL + total.toFixed(2);
+}
+
+renderCart();
+</script>
+</body>
+</html>
